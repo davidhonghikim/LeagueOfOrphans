@@ -1,0 +1,65 @@
+site_name: LOO Project Hub Documentation
+site_description: Central documentation for all projects under the LOO initiative.
+site_author: The LOO Team
+
+repo_url: # Add your main Git repository URL here if you have one
+edit_uri: # Add a link to edit pages if your repo is public
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate 
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    logo: material/rocket-launch # Example logo, can be changed
+
+# Extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - admonition
+  - toc:
+      permalink: true
+  - attr_list
+
+nav:
+  - 'LOO Project Home': 'index.md'
+  - 'TokiDAO Project':
+    - 'Backend API Docs (Local)': './TokiDAO/backend_fastapi/site/index.html' # Link to the locally built site
+    # Add link to deployed TokiDAO docs if/when available
+    - 'TokiDAO Overview': 'TokiDAO/design_docs/TokiDao_Project_Overview.md' # Assuming we create/move this
+  - 'OpenPass Project':
+    - 'Design Document': 'OpenPass/design_docs/OpenPass_Design_Prompt.md' # Assuming we create/move this
+  - 'LoraNet Project (ResilientLoRaChain)':
+    - 'System Notes': 'LoraNet/design_docs/lora_system_notes.md' # Assuming we create/move this
+  # Add other main project-level documents here
+  # - 'Overall Architecture': 'architecture.md'
+  # - 'Onboarding Guide': 'onboarding.md'
+
+# Copyright
+copyright: Copyright &copy; 2024 The LOO Team
+
+# Optional: If you want to include files from outside the docs_dir
+# You might need plugins like mkdocs-include-markdown-plugin for complex includes
+# Or simply copy relevant markdown files into the LOO/docs directory structure.
